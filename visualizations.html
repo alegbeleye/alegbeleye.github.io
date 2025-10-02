@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visualizations | Michael Alegbeleye</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header class="main-header">
+            <nav class="main-nav container">
+                <a href="index.html" class="nav-logo">MA</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="visualizations.html"
+                            class="active">Visualizations</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+
+            <section id="visualizations-intro" class="hero-section">
+                <h1>Data in Focus</h1>
+                <p class="subtitle">
+                    Exploring global trends and generative art, rendered with
+                    D3.js.
+                </p>
+            </section>
+
+            <section id="ev-sales-viz" class="content-section">
+                <h2 class="section-title">Global EV Sales</h2>
+                <div class="section-content">
+                    <p>Data Source: IEA Global EV Outlook 2024 (simplified
+                        figures for 2023)</p>
+                    <p>This bar chart displays the leading countries and regions
+                        by the number of electric vehicles sold in 2023. Hover
+                        over the bars to see the exact sales figures in
+                        millions.</p>
+                    <div id="bar-chart-container">
+                        <div id="ev-sales-chart"></div>
+                    </div>
+                    <div class="interpretation">
+                        <h4>Interpretation</h4>
+                        <p>The visualization clearly indicates China's
+                            overwhelming dominance in the global electric
+                            vehicle market. This highlights China's central role
+                            as both a consumer and producer in the worldwide
+                            transition to electric mobility.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="creative-art-viz" class="content-section">
+                <h2 class="section-title">Generative Art</h2>
+                <div class="section-content">
+                    <p>An interactive piece of generative art created with
+                        D3.js. A unique composition of circles with random
+                        sizes, colors, and velocities is generated on each page
+                        load.</p>
+                    <div id="creative-art-container">
+                        <div id="creative-art"></div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="main-footer">
+            <div class="container footer-content">
+                <h2>Let's Connect</h2>
+                <p>Feel free to reach out for collaborations or just a friendly
+                    chat.</p>
+                <div class="contact-links">
+                    <a
+                        href="mailto:malegbeleye72@gmail.com">malegbeleye72@gmail.com</a>
+                    <a href="https://github.com/alegbeleye"
+                        target="_blank">GitHub</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="vis.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

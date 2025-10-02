@@ -1,0 +1,261 @@
+/* ---
+   Modern Minimalist Portfolio Style
+   Designed for Michael Alegbeleye
+--- */
+
+/* --- 1. SETUP & TYPOGRAPHY --- */
+
+/* Import a modern, clean font: Satoshi from Fontshare */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap");
+
+:root {
+  --font-primary: "Satoshi", "Inter", system-ui, sans-serif;
+  --color-background: #ffffff;
+  --color-text-primary: #111111;
+  --color-text-secondary: #666666;
+  --color-border: #eaeaea;
+  --container-width: 900px;
+  --spacing-unit: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 calc(var(--spacing-unit) * 2);
+}
+
+/* Typographic Scale */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-unit);
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+h3 {
+  font-size: 1.125rem;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+p {
+  margin-bottom: var(--spacing-unit);
+  color: var(--color-text-secondary);
+}
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #0077ff; /* A single, subtle accent for hover */
+}
+ul {
+  list-style: none;
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+.main-header {
+  padding: calc(var(--spacing-unit) * 2) 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: calc(var(--spacing-unit) * 2);
+}
+
+.main-nav a {
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.main-nav a.active,
+.main-nav a:hover {
+  border-bottom-color: var(--color-text-primary);
+}
+
+/* --- 3. LAYOUT & SECTIONS --- */
+.hero-section {
+  padding: calc(var(--spacing-unit) * 4) 0;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-section h1 {
+  max-width: 12ch; /* Limit width for better readability */
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.hero-section .subtitle {
+  font-size: 1.25rem;
+  max-width: 50ch;
+  color: var(--color-text-primary);
+}
+
+.education-section {
+  margin-top: 5rem;
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr; /* Default for mobile */
+  gap: calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) * 4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Asymmetrical grid for desktop */
+@media (min-width: 768px) {
+  .content-section {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+.section-title {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+/* --- 4. COMPONENTS --- */
+
+/* Experience */
+.job {
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+.job:last-child {
+  margin-bottom: 0;
+}
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.job-company {
+  font-weight: 500;
+  margin-bottom: var(--spacing-unit);
+}
+.job ul {
+  padding-left: var(--spacing-unit);
+}
+.job li {
+  list-style-type: "— ";
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+/* Projects */
+.project {
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+.project:last-child {
+  margin-bottom: 0;
+}
+.project a {
+  font-weight: 500;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+}
+
+/* --- 5. FOOTER --- */
+.main-footer {
+  padding: calc(var(--spacing-unit) * 5) 0;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.footer-content h2 {
+  font-size: 2rem;
+  color: var(--color-text-primary);
+}
+.footer-content p {
+  color: var(--color-text-secondary);
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-links {
+  margin-top: calc(var(--spacing-unit) * 2);
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--spacing-unit) * 2);
+  flex-wrap: wrap;
+}
+.contact-links a {
+  font-weight: 500;
+}
+
+/* --- 6. UTILITIES (from main.js) --- */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments for hero text */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section .subtitle {
+    font-size: 1.125rem;
+  }
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
