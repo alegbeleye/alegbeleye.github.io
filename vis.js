@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // --- Visualization 1: EV Sales Bar Chart ---
   function createEVSalesChart() {
-    // Data Source: IEA Global EV Outlook 2024 (simplified figures for 2023)
     const data = [
       { region: "China", sales: 8.4 },
       { region: "Europe", sales: 3.2 },
@@ -9,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
       { region: "Rest of World", sales: 1.0 },
     ];
 
-    // A sophisticated color palette for our categories
     const colorPalette = ["#003f5c", "#7a5195", "#ef5675", "#ffa600"];
 
     const margin = { top: 20, right: 20, bottom: 50, left: 50 };
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .scaleBand()
       .range([0, width])
       .domain(data.map((d) => d.region))
-      .padding(0.3); // Increased padding for a cleaner look
+      .padding(0.3);
 
     const y = d3
       .scaleLinear()
@@ -74,10 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("y", (d) => y(d.sales))
       .attr("width", x.bandwidth())
       .attr("height", (d) => height - y(d.sales))
-      // Apply color from our new palette
       .attr("fill", (d, i) => colorPalette[i])
       .on("mouseover", function (event, d) {
-        // Darken the existing color on hover for a nice effect
         d3.select(this).attr(
           "fill",
           d3.color(d3.select(this).attr("fill")).darker(0.3)
@@ -99,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tooltip.style("visibility", "hidden");
       });
   }
-  // --- Visualization 2: Creative SVG Art (New) ---
+
   function createCreativeArt() {
     const margin = { top: 20, right: 20, bottom: 20, left: 20 };
     const width = 480 - margin.left - margin.right;
