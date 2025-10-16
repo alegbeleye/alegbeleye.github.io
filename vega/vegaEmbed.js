@@ -107,7 +107,7 @@ const spec2 = {
 };
 vegaEmbed("#vis2", spec2);
 
-// Visualization 3: 100% Stacked Bar Chart for Regional Sales (FIXED)
+// Visualization 3: 100% Stacked Bar Chart for Regional Sales
 const spec3 = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   data: { url: "dataset/videogames_long.csv" },
